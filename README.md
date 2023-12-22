@@ -24,7 +24,8 @@ To set up the ProjetUnityVR project, follow these steps:
 1. Clone the repository: `git clone https://github.com/garrach/unityUploads.git`
 2. Open the project in Unity.
 3. Configure VR settings (e.g., Oculus Rift, HTC Vive) in Unity.
-4. Explore and build the project.
+4. Download the Files i provide in the [here](https://drive.google.com/drive/folders/1rlV6CrD7PG4s8czQuCYRjpoXhmCrUiwX?usp=sharing)
+5. Explore and build the project.
 
 ## Build
  ![build-the-project](https://github.com/garrach/unityUploads/blob/main/Assets/Art/c00.PNG)
