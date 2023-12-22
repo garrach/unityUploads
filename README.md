@@ -21,7 +21,7 @@ ProjetUnityVR is a Unity project that leverages Virtual Reality (VR) for an imme
 
 ## Installation
 To set up the ProjetUnityVR project, follow these steps:
-1. Clone the repository: `git clone https://github.com/garrach/ProjetUnityVR.git`
+1. Clone the repository: `git clone https://github.com/garrach/unityUploads.git`
 2. Open the project in Unity.
 3. Configure VR settings (e.g., Oculus Rift, HTC Vive) in Unity.
 4. Explore and build the project.
