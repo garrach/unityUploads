@@ -6,10 +6,7 @@
 ## Description
 ProjetUnityVR is a Unity project that leverages Virtual Reality (VR) for an immersive experience.
 
-```c#
-def example():
-    print("Hello, Markdown!")
-````
+
 ## Table of Contents
 - [Features](#features)
 - [Installation](#installation)
@@ -58,6 +55,153 @@ To set up the ProjetUnityVR project, follow these steps:
 6. ![build-02-project](https://github.com/garrach/unityUploads/blob/main/Assets/Art/c01.PNG)
 7. ![build-03-project](https://github.com/garrach/unityUploads/blob/main/Assets/Art/c002.PNG)
 8. ![build-04-project](https://github.com/garrach/unityUploads/blob/main/Assets/Art/c003.PNG)
+
+## JoySticks Script 
+```c#
+using UnityEngine;
+using UnityEngine.EventSystems;
+
+    public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
+    {
+        [Header("References")]
+        public RectTransform joystickBase;
+        public RectTransform joystickHandle;
+
+        [Header("Joystick Parameters")]
+        public float joystickRadius = 50f; // Adjust this based on your UI size
+
+        private Vector2 joystickCenter;
+        private Vector2 inputDirection = Vector2.zero;
+        private bool isDragging = false;
+
+        private void Start()
+        {
+            // Calculate the center of the joystick base
+            joystickCenter = joystickBase.position;
+        }
+
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            OnDrag(eventData);
+        }
+
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            ResetJoystick();
+        }
+
+        public void OnDrag(PointerEventData eventData)
+        {
+            Vector2 pointerPosition = eventData.position;
+
+            // Calculate the direction from the center of the joystick to the pointer
+            inputDirection = (pointerPosition - joystickCenter).normalized;
+
+            // Limit the input distance to the joystick's radius
+            float inputMagnitude = (pointerPosition - joystickCenter).magnitude;
+            inputDirection *= Mathf.Clamp(inputMagnitude / joystickRadius, -1f, 1f);
+
+            // Update the position of the joystick handle
+            joystickHandle.anchoredPosition = inputDirection * joystickRadius;
+
+            isDragging = true;
+        }
+
+        private void ResetJoystick()
+        {
+            // Reset the input direction and joystick handle position
+            inputDirection = Vector2.zero;
+            joystickHandle.anchoredPosition = Vector2.zero;
+            isDragging = false;
+        }
+
+        public Vector2 GetInputDirection()
+        {
+            return isDragging ? inputDirection : Vector2.zero;
+        }
+    }
+````
+
+## FootstepSounds
+````c#
+using UnityEngine;
+using UnityStandardAssets.Characters.ThirdPerson;
+public class FootstepSounds : MonoBehaviour
+{
+    public AudioClip defaultFootstepSound;
+    public AudioClip grassFootstepSound;
+    public AudioClip concreteFootstepSound;
+    // Add more surfaces and corresponding sounds as needed
+
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+
+        // Set the default footstep sound lolo
+        audioSource.clip = defaultFootstepSound;
+    }
+
+    public void PlayFootstepSound()
+    {
+        if (audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
+        if (audioSource != null )
+        {
+            audioSource.Play();
+        }
+    }
+}
+````
+## Switch/changeView Play-mode
+````c#
+using UnityEngine;
+using UnityEngine.SceneManagement;
+public class ObjectSwitcher : MonoBehaviour
+{
+    public GameObject camFPS;
+    public GameObject camTPS;
+    private SkinnedMeshRenderer PlayerMesh;
+
+    public float zoomSpeed = 5f;
+    private void FixedUpdate()
+    {
+        PlayerMesh = FindObjectOfType<SkinnedMeshRenderer>();
+    }
+    void Update()
+    {
+        float scrollWheel = Input.GetAxis("Mouse ScrollWheel");
+
+        if (Mathf.Abs(scrollWheel) > 0.01f)
+        {
+            float newFieldOfView = Camera.main.fieldOfView - scrollWheel * zoomSpeed;
+            newFieldOfView = Mathf.Clamp(newFieldOfView, 1f, 179f);
+
+            Camera.main.fieldOfView = newFieldOfView;
+        }
+    }
+    public void changeView()
+    {
+       
+            camFPS.SetActive(!camFPS.activeSelf);
+            camTPS.SetActive(!camTPS.activeSelf);
+
+            camFPS.transform.position = PlayerMesh.transform.position+Vector3.up;
+            PlayerMesh.enabled = !PlayerMesh.enabled;
+        
+
+    }
+    public void retourne()
+    {
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+
+    }
+}
+````
 
 ## Contributing
 Contributions are welcome! If you want to contribute to ProjetUnityVR, follow these steps:
