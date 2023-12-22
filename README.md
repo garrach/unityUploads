@@ -5,7 +5,7 @@
 
 ## Description
 ProjetUnityVR is a Unity project that leverages Virtual Reality (VR) for an immersive experience.
-
+[^1]: The footnote text.
 ## Table of Contents
 - [Features](#features)
 - [Installation](#installation)
