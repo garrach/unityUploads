@@ -27,7 +27,7 @@ To set up the ProjetUnityVR project, follow these steps:
 4. Explore and build the project.
 
 ## Build
- ![build-the-project](https://github.com/garrach/ProjetUnityVR/blob/main/Assets/Art/c00.PNG)
+ ![build-the-project](https://github.com/garrach/unityUploads/edit/main/Assets/Art/c00.PNG)
 
 
 ## Usage
@@ -35,10 +35,10 @@ To set up the ProjetUnityVR project, follow these steps:
 2. Navigate to the `Assets/Scenes` folder and open the main scene.
 3. Play the scene to experience the VR environment.
 4. Interact with objects using VR controllers.
- ![build-the-project](https://github.com/garrach/ProjetUnityVR/blob/main/Assets/Art/c00.PNG)
- ![build-the-project](https://github.com/garrach/ProjetUnityVR/blob/main/Assets/Art/c01.PNG)
- ![build-the-project](https://github.com/garrach/ProjetUnityVR/blob/main/Assets/Art/c002.PNG)
- ![build-the-project](https://github.com/garrach/ProjetUnityVR/blob/main/Assets/Art/c003.PNG)
+ ![build-the-project](https://github.com/garrach/unityUploads/edit/main/Assets/Art/c00.PNG)
+ ![build-the-project](https://github.com/garrach/unityUploads/edit/main/Assets/Art/c01.PNG)
+ ![build-the-project](https://github.com/garrach/unityUploads/edit/main/Assets/Art/c002.PNG)
+ ![build-the-project](https://github.com/garrach/unityUploads/edit/main/Assets/Art/c003.PNG)
 
 ## Contributing
 Contributions are welcome! If you want to contribute to ProjetUnityVR, follow these steps:
