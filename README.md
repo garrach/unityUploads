@@ -6,7 +6,6 @@
 ## Description
 ProjetUnityVR is a Unity project that leverages Virtual Reality (VR) for an immersive experience.
 
-
 ## Table of Contents
 - [Features](#features)
 - [Installation](#installation)
@@ -124,25 +123,6 @@ using UnityEngine.EventSystems;
 
 ## FootstepSounds
 ````c#
-using UnityEngine;
-using UnityStandardAssets.Characters.ThirdPerson;
-public class FootstepSounds : MonoBehaviour
-{
-    public AudioClip defaultFootstepSound;
-    public AudioClip grassFootstepSound;
-    public AudioClip concreteFootstepSound;
-    // Add more surfaces and corresponding sounds as needed
-
-    private AudioSource audioSource;
-
-    private void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-
-        // Set the default footstep sound lolo
-        audioSource.clip = defaultFootstepSound;
-    }
-
     public void PlayFootstepSound()
     {
         if (audioSource.isPlaying)
@@ -154,35 +134,9 @@ public class FootstepSounds : MonoBehaviour
             audioSource.Play();
         }
     }
-}
 ````
 ## Switch/changeView Play-mode
 ````c#
-using UnityEngine;
-using UnityEngine.SceneManagement;
-public class ObjectSwitcher : MonoBehaviour
-{
-    public GameObject camFPS;
-    public GameObject camTPS;
-    private SkinnedMeshRenderer PlayerMesh;
-
-    public float zoomSpeed = 5f;
-    private void FixedUpdate()
-    {
-        PlayerMesh = FindObjectOfType<SkinnedMeshRenderer>();
-    }
-    void Update()
-    {
-        float scrollWheel = Input.GetAxis("Mouse ScrollWheel");
-
-        if (Mathf.Abs(scrollWheel) > 0.01f)
-        {
-            float newFieldOfView = Camera.main.fieldOfView - scrollWheel * zoomSpeed;
-            newFieldOfView = Mathf.Clamp(newFieldOfView, 1f, 179f);
-
-            Camera.main.fieldOfView = newFieldOfView;
-        }
-    }
     public void changeView()
     {
        
@@ -194,13 +148,6 @@ public class ObjectSwitcher : MonoBehaviour
         
 
     }
-    public void retourne()
-    {
-
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-
-    }
-}
 ````
 
 ## Contributing
