@@ -14,10 +14,23 @@ ProjetUnityVR is a Unity project that leverages Virtual Reality (VR) for an imme
 - [License](#license)
 - [build-the-project](#build)
 
-## Features
-- VR Interaction: Utilize the power of VR to create interactive experiences.
-- Unity Integration: Seamless integration with the Unity game development environment.
-- Immersive Environments: Create and explore immersive virtual environments.
+# Features
+
+## VR Interaction
+- Utilize the power of VR to create interactive experiences.
+- Seamless object manipulation and environment interaction.
+
+## Unity Integration
+- Seamless integration with the Unity game development environment.
+- Leverage familiar Unity workflows for efficient development.
+
+## Immersive Environments
+- Create and explore immersive virtual environments.
+- Realistic graphics, 3D audio, and elements enhancing user presence.
+
+## Character FPS/TPS Smooth Change
+- Smooth transitions between first-person and third-person perspectives.
+- Versatile gameplay experience for players.
 
 ## Installation
 To set up the ProjetUnityVR project, follow these steps:
